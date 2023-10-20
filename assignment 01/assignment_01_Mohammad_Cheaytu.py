@@ -2,7 +2,7 @@
 def getFactorial():
     x = int(input("what is the number? "))
     if x < 0:
-        return False  # if the nb is negative dont accept it
+        return False  # if the nb is negative return False
     elif x < 2:
         return 1 # if x is 1 or 0 return 1
     else:
@@ -19,8 +19,8 @@ def divisor():
     x = int(input("type the number: "))
     y=[] # create a variable that is an empty string
     for i in range(1, x + 1):
-        if x % i == 0: # divise user input with i and see if the reminder is zero
-            y.append(i) # add i inside y 
+        if x % i == 0: # divise user's input with i and see if the reminder is zero
+            y.append(i) # add i inside y using .append method
     return y        
        
 print(divisor())
