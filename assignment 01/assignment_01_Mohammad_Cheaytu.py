@@ -60,7 +60,7 @@ def password():
     lower = False
     special = False
 
-    if len(x) < 8: # if the char inputed by the user is less then 8 then return false
+    if len(x) <= 8: # if the char inputed by the user is less then 8 then return false
        print("Weak password")
        return
 
