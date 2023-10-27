@@ -27,5 +27,44 @@ def countTags(x, y):
     count = len(matches)  # count matches
     
     return count
+def exit():
+  print("You have exited the program")
 
-        
+
+def displayMenu():
+  print("The Menu:\n 1. Count Digits\n 2. Find Max\n 3. Count Tags\n 4. Exit\n")
+
+
+
+displayMenu()
+
+
+def main2():
+    
+  displayMenu()
+  
+  choice = int(input("Please enter your choice here:"))
+
+
+  while (choice != 4):
+    if choice == 1:
+      x = int(input("what is the number? "))  
+      print(countDigits(x))
+    elif choice == 2:
+      x = input("type the numbers here with a comma between them: ").split(",")
+      print(findMax(x))
+    elif choice == 3:
+      x = input("""write the HTML code here: """)
+      y = input("what are the tags?: ")
+      print(countTags(x, y))
+
+    else:
+      print("Invalid choice")
+
+    break
+
+  exit()
+
+
+
+main2()
