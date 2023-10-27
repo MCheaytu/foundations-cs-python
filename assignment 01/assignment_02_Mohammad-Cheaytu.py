@@ -5,5 +5,14 @@ def countDigits(x):
          return 1 
     else: 
         return 1 + countDigits(x // 10) # recursive that divide x by 10 (to remove the last digit) and add 1 to the result
-        
+def findMax(x):
+    
+    if len(x) == 1:
+        return x[0] # if the input list have only one element, that element is the maximum value.
+    else:
+        y = findMax(x[:-1]) # recursive that remove the last element from the list and call findMax again with the remaining elements
+        if y > x[-1]: # compare the result to the last element of the original list to see which is larger
+             return findMax   # return the maximum value found.
+        else:
+             return x[-1]
         
