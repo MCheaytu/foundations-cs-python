@@ -1,4 +1,4 @@
-
+import.re # import regex
 
 def countDigits(x): 
     if x < 10:
@@ -15,4 +15,17 @@ def findMax(x):
              return findMax   # return the maximum value found.
         else:
              return x[-1]
+             
+def countTags(x, y):
+    
+    pattern = r'<{}>.*? </{}>(?:</{}>)? '.format(y, y, y) # a regex pattern to match the opening and closing tags
+    
+    regex = re.compile(pattern)  # compile regex pattern
+    
+    matches = regex.findall(x)  # find the matches in HTML string
+    
+    count = len(matches)  # count matches
+    
+    return count
+
         
