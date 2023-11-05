@@ -105,3 +105,65 @@ def getToPerformers(data):
 
 def exit():
   print("You have exited the program")
+  def displayMenu():
+  print("The Menu:\n 1. Get Student by ID\n 2. Get All Students\n 3. Get Students by Major\n 4. Add Student\n 5. Find Common Majors\n 6. Delete Student\n 7. Calculate Average GPA\n 8. Get Top Performers\n 9. Exit\n")
+
+
+
+
+def main2():
+    
+  displayMenu()
+  
+  choice = int(input("Please enter your choice here:"))
+
+
+  while (choice != 9):
+    if choice == 1:
+      x = int(input("enter the ID: "))
+      print(studentId(x))
+
+    elif choice == 2:
+      print(getAllStudent())
+
+    elif choice == 3:
+        x = input("Major (case sensitive): ")
+        studentMajor(x)
+
+    elif choice == 4:
+        name = input("Name: ")
+        age = int(input("Age: "))
+        major = input("Major: ")
+        gpa = float(input("GPA: "))
+        x = {"ID": len(data) + 1, "Name": name,"Age": age,"Major": major,"GPA": gpa}
+        addStudent(x)
+        print("New student added")
+
+    elif choice == 5:
+        a = data 
+        b = data
+        print(findCommonMajor(a, b))
+
+    elif choice == 6:
+        id = int(input("The student ID: "))
+        deleteStudent(id)
+
+    elif choice == 7:
+        print(calculateAverage())
+        
+    elif choice == 8:
+        print(getToPerformers(data))
+
+    elif choice == 9:
+        exit()
+
+    else:
+      print("Invalid choice")
+
+    break
+
+  exit()
+
+
+
+main2()
