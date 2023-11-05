@@ -65,3 +65,43 @@ def findCommonMajor(a, b):
   z = x.intersection(y) # intersection result between x and y
   return z
 # -----------------------------
+# Choice 6: This function takes the student data and a student's ID as arguments and removes the
+#student with the given ID from the data.
+
+
+def deleteStudent(id):
+    if data[0]["ID"] == id:
+      del data[0] # delete the first element of data if the inputed id had the same value the key "ID" in the first dictionnary 
+      print("The Operation completed successfully")
+      print(data)
+    elif data[1]["ID"] == id:
+      del data[1]
+      print("The Operation completed successfully")
+      print(data)
+    else:
+      print("There is no student found with such ID")
+# -----------------------------
+
+#Choice 7: This function takes the student data as an argument and returns the average GPA of
+#all the students in the data.
+
+def calculateAverage():
+    avg_gpa = (data[0]["GPA"] + data[1]["GPA"]) / 2 # combining the two GPA values and divinding them b the nb of of students which is 2 in this case
+    return avg_gpa
+# -----------------------------
+
+#Choice 8: This function takes the student data and the number of top-performing students to
+#retrieve as arguments. It returns a tuple of the specified number of students with the highest
+#GPAs (the tuple should have the name of those students).
+
+def getToPerformers(data):
+  tuple1 = () # create an empty tuple
+  data_sort = sorted(data, key=lambda x: -x["GPA"]) #sort data from the highest GPA to the lowest
+  tuple2 = (*tuple1, data_sort[0]["Name"]) # add the first name value with highest GPA to the tuple
+  return tuple2
+# -----------------------------
+
+# Choice 9: This choice terminates the program.
+
+def exit():
+  print("You have exited the program")
