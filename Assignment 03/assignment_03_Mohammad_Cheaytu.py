@@ -47,3 +47,21 @@ def studentMajor(x):
     else:
         print("student of the major were found")
 # -----------------------------
+# Choice 4: This function takes the student data, a name, an age, a major, and a GPA as arguments
+# and adds a new student to the data.
+
+
+def addStudent(x):
+    data.append(x)
+# -----------------------------
+
+#Choice 5 This function takes two student data lists as arguments and returns a set of common
+#majors found in both lists.
+
+
+def findCommonMajor(a, b): 
+  x = set(i["Major"] for i in a) # set containing the key "Major" value in list a
+  y = set(i["Major"] for i in b) 
+  z = x.intersection(y) # intersection result between x and y
+  return z
+# -----------------------------
