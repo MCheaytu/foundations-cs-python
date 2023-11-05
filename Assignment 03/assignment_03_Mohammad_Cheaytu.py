@@ -22,4 +22,28 @@ def studentId(x):
         return y
     else:
       print("Student not found")
-    # -----------------------------
+# -----------------------------
+# Choice 2: This function takes the student data as an argument and returns a list of all students'
+#information.
+
+def getAllStudent():
+    return data
+# -----------------------------
+
+#Choice 3: This function takes the student data and a major as arguments and returns a list of
+#students in the specified major.
+
+def studentMajor(x):
+    sentence_1 = "Computer Science" 
+    sentence_2 = "Engineering"
+    if x == sentence_1: 
+        dic_1 = data[0] # assigning the first element in the list to a variable
+        list_1 = list(dic_1.values()) # take the values of the keys in the first element and covert them to a list
+        print(list_1)
+    elif x == sentence_2:
+        dic_2 = data[1]
+        list_2 = list(dic_2.values())
+        print(list_2)
+    else:
+        print("student of the major were found")
+# -----------------------------
