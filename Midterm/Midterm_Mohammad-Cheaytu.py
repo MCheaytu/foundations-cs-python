@@ -92,7 +92,8 @@ def main2():
             parent_index = int(input("Kindly enter the index number: "))
             title = input("Kindly enter the title of the tab: ")
             url = input("kindly enter the url of the tab: ")
-
+            new_tab = {"Index": parent_index + 0.1, "Title": title, "URL": url}
+            nestedTabs(new_tab, parent_index, url)
         elif choice == 6:
 
 
