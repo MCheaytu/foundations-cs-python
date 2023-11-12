@@ -1,3 +1,5 @@
+# findings, try except else, requests, beautiful soup
+#  List insert() method, list clear method, json.dump(), os.path.exists(),json.load(), list.copy()
 import requests
 from bs4 import BeautifulSoup
 import os
