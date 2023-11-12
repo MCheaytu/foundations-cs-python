@@ -41,6 +41,10 @@ def switchTab(user_input):
         doc = BeautifulSoup(r2.text, "html.parser")
         print(doc.prettify())
 
+def displayTabs():
+    title = [i['Title'] for i in tabs]
+    print(title)
+    
 def main2():
     greetings()
     displayMenu()
@@ -64,7 +68,7 @@ def main2():
             switchTab(user_input)
 
         elif choice == 4:
-
+            displayTabs()
 
         elif choice == 5:
 
