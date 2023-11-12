@@ -99,6 +99,9 @@ def clearTabs():
     print(tabs)
      # -----------------------------------------  
      # If the admin chooses (7), the system should prompt the user to provide a file path as
+     #a parameter to save the current state of open tabs. Each tab's information, including
+     #title, content, and any nested tabs, should be written to the file in JSON format.
+     #Conduct some research for additional insights on JSON.
      
 def saveTabs(path1):
     file_name = "tabs.json"
