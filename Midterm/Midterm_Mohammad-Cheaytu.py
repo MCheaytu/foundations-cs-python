@@ -5,15 +5,15 @@ from bs4 import BeautifulSoup
 import os
 import json
 
-tabs = []
-def openTab(url, title):
+tabs = [] # List to store open tabs
+def openTab(url, title): # Function to open a new tab
     try:
-        r = requests.get(url)
+        r = requests.get(url) #  Make a request to the given url
     except:
-        print("invalid url")
+        print("invalid url") # If there was an error print invalid url
     else:
-        tab = {"Index": len(tabs), "Title": title, "URL": url}
-        tabs.append(tab)
+        tab = {"Index": len(tabs), "Title": title, "URL": url} # Create a new tab dictionnary
+        tabs.append(tab) # Add it to the list
         print(tabs)
         
 def closeTab(user_input):
