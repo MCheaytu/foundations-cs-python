@@ -13,7 +13,19 @@ def openTab(url, title):
         tab = {"Index": len(tabs), "Title": title, "URL": url}
         tabs.append(tab)
         print(tabs)
+        
+def closeTab(user_input):
+    global tabs
+    if user_input:
+        try:
+            user_float = float(user_input)
+            tabs = [i for i in tabs if i.get("Index") != user_float]
 
+        except:
+            print("Invalid input")
+    else:
+        if tabs:
+            tabs.pop()
 
 
 def main2():
@@ -29,6 +41,9 @@ def main2():
             openTab(url, title)
 
         elif choice == 2:
+            user_input = input("Please enter the index number: ")
+            closeTab(user_input)
+            print(tabs)
 
 
         elif choice == 3:
