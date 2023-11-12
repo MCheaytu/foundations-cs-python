@@ -1,5 +1,4 @@
-# findings, try except else, requests, beautiful soup
-#  List insert() method, list clear method, json.dump(), os.path.exists(),json.load(), list.copy()
+# findings, try except else, requests, beautiful soup, List insert() method, list clear method, json.dump(), os.path.exists(),json.load(), list.copy()
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -10,7 +9,7 @@ def openTab(url, title): # Function to open a new tab
     try:
         r = requests.get(url) #  Make a request to the given url
     except:
-        print("invalid url") # If there was an error print invalid url
+        print("Invalid url") # If there was an error print invalid url
     else:
         tab = {"Index": len(tabs), "Title": title, "URL": url} # Create a new tab dictionnary
         tabs.append(tab) # Add it to the list
@@ -102,29 +101,28 @@ def main2():
     greetings()
     displayMenu()
 
-    choice = int(input("Please enter your choice here:"))
+    choice = int(input("Kindly enter your choice here: "))
 
     while (choice != 9):
         if choice == 1:
-            url = input("Enter the URL: ") # Url value
-            title = input("Plz enter the Title:")  #Title name
+            url = input("Kindly Enter the URL: ") # Url value
+            title = input("Kindly enter the title:")  #Title name
             openTab(url, title) # Calling the function
 
         elif choice == 2:
-            user_input = input("Please enter the index number: ")
+            user_input = input("Kindly enter the index number: ")
             closeTab(user_input)
             print(tabs)
 
 
         elif choice == 3:
-            user_input = input("Please enter the index number: ")
+            user_input = input("Kindly enter the index number: ")
             switchTab(user_input)
 
         elif choice == 4:
             displayTabs()
 
         elif choice == 5:
-            # Asking inputs from user
             parent_index = int(input("Kindly enter the index number: "))
             title = input("Kindly enter the title of the tab: ")
             url = input("kindly enter the url of the tab: ")
@@ -134,12 +132,12 @@ def main2():
             clearTabs()
 
         elif choice == 7:
-            path1 = input("kindly write the file path :") # Prompting the user to add the path
+            path1 = input("Kindly write the file path :") # Prompting the user to add the path
             saveTabs(path1)
 
 
         elif choice == 8:
-            path1 = input("kindly write the file path :")
+            path1 = input("Kindly write the file path :")
             importTabs(path1)
 
         elif choice == 9:
@@ -149,7 +147,7 @@ def main2():
             print("Invalid choice")
 
         displayMenu()
-        choice = int(input("Please enter your choice here:"))
+        choice = int(input("Kindly enter your choice here:"))
     exit()
 
 
