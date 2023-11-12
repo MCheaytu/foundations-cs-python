@@ -24,7 +24,9 @@ def main2():
 
     while (choice != 9):
         if choice == 1:
-
+            url = input("Enter the URL: ")
+            title = input("Plz enter the Title:")
+            openTab(url, title)
 
         elif choice == 2:
 
