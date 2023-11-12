@@ -62,6 +62,10 @@ def nestedTabs(new_tab, parent_index, url):
         else:
             tabs.insert(nested_tab_position, new_tab)
             print(tabs)
+            
+def clearTabs():
+    tabs.clear()
+    print(tabs)
     
 def main2():
     greetings()
@@ -95,7 +99,7 @@ def main2():
             new_tab = {"Index": parent_index + 0.1, "Title": title, "URL": url}
             nestedTabs(new_tab, parent_index, url)
         elif choice == 6:
-
+            clearTabs()
 
         elif choice == 7:
 
