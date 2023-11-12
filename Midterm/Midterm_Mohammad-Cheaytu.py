@@ -106,9 +106,9 @@ def main2():
 
     while (choice != 9):
         if choice == 1:
-            url = input("Enter the URL: ")
-            title = input("Plz enter the Title:")
-            openTab(url, title)
+            url = input("Enter the URL: ") # Url value
+            title = input("Plz enter the Title:")  #Title name
+            openTab(url, title) # Calling the function
 
         elif choice == 2:
             user_input = input("Please enter the index number: ")
@@ -124,16 +124,17 @@ def main2():
             displayTabs()
 
         elif choice == 5:
+            # Asking inputs from user
             parent_index = int(input("Kindly enter the index number: "))
             title = input("Kindly enter the title of the tab: ")
             url = input("kindly enter the url of the tab: ")
-            new_tab = {"Index": parent_index + 0.1, "Title": title, "URL": url}
+            new_tab = {"Index": parent_index + 0.1, "Title": title, "URL": url}  # create a dictionnary out of the inputed values and adding 0.1 to the parent_index
             nestedTabs(new_tab, parent_index, url)
         elif choice == 6:
             clearTabs()
 
         elif choice == 7:
-            path1 = input("kindly write the file path :")
+            path1 = input("kindly write the file path :") # Prompting the user to add the path
             saveTabs(path1)
 
 
