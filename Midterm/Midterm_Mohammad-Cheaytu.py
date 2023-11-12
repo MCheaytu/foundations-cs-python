@@ -16,17 +16,17 @@ def openTab(url, title): # Function to open a new tab
         tabs.append(tab) # Add it to the list
         print(tabs)
         
-def closeTab(user_input):
+def closeTab(user_input): # Function to close a tab
     global tabs
-    if user_input:
+    if user_input: # Check if the user provided input
         try:
-            user_float = float(user_input)
+            user_float = float(user_input) # Iterate over the list of dictionaries and remove the one with a matching "Index" value
             tabs = [i for i in tabs if i.get("Index") != user_float]
 
         except:
             print("Invalid input")
     else:
-        if tabs:
+        if tabs: # If there is no index remove the last tab
             tabs.pop()
 
 def switchTab(user_input):
