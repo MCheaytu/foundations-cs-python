@@ -73,7 +73,7 @@ def saveTabs(path1):
     file_name = "tabs.json"
     if os.path.exists(path1):  # Check if path exists
         os.chdir(path1) # Change directory to the specified path
-        with open(file_name, "w") as file_object: # Open tabs.json in write mode
+        with open(file_name, "w") as file_object: # Open tabs.json in write mode as a file object
             json.dump(tabs, file_object) # Dumps list tabs to tabs.json
         print("Operation done")
     else:
@@ -83,9 +83,9 @@ def importTabs(path1):
     file_name = "tabs.json"
     if os.path.exists(path1):
         os.chdir(path1)
-        with open(file_name, "r") as file_object:
-            data = json.load(file_object)
-            tabs.append(data.copy())
+        with open(file_name, "r") as file_object: # Open tabs.json in read mode as a file object
+            data = json.load(file_object) # Load data from tabs.json
+            tabs.append(data.copy()) # add data in tabs.json to the list tabs
         print(tabs)
     else:
         print("The specified file does not exist")
