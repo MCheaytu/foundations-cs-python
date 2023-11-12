@@ -1,4 +1,4 @@
-# findings, try except else, requests, beautiful soup, List insert() method, list clear method, json.dump(), os.path.exists(),json.load(), list.copy()
+# findings, try except else, requests, beautiful soup, List insert() method, list clear method, json.dump(), os.path.exists(),json.load(), list.copy(), Import json Module, req.get, 
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -125,7 +125,7 @@ def main2():
         elif choice == 5:
             parent_index = int(input("Kindly enter the index number: "))
             title = input("Kindly enter the title of the tab: ")
-            url = input("kindly enter the url of the tab: ")
+            url = input("Kindly enter the url of the tab: ")
             new_tab = {"Index": parent_index + 0.1, "Title": title, "URL": url}  # create a dictionnary out of the inputed values and adding 0.1 to the parent_index
             nestedTabs(new_tab, parent_index, url)
         elif choice == 6:
