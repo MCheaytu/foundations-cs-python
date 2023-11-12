@@ -67,6 +67,16 @@ def clearTabs():
     tabs.clear()
     print(tabs)
     
+def saveTabs(path1):
+    file_name = "tabs.json"
+    if os.path.exists(path1):
+        os.chdir(path1)
+        with open(file_name, "w") as file_object:
+            json.dumps(tabs, file_object)
+        print("Operation done")
+    else:
+        print("The specified file does not exist")
+    
 def main2():
     greetings()
     displayMenu()
@@ -102,6 +112,9 @@ def main2():
             clearTabs()
 
         elif choice == 7:
+            path1 = input("kindly write the file path :")
+            saveTabs(path1)
+
 
         elif choice == 8:
 
