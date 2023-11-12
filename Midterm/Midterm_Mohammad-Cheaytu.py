@@ -90,11 +90,16 @@ def nestedTabs(new_tab, parent_index, url):
         else:
             tabs.insert(nested_tab_position, new_tab) # Insert new tab at the specified position
             print(tabs)
-      # -----------------------------------------         
+     # -----------------------------------------  
+     # If the admin chooses (6), the system should allow users to clear all opened tabs.
+      
+      
 def clearTabs():
     tabs.clear() # clear tabs
     print(tabs)
-    
+     # -----------------------------------------  
+     # If the admin chooses (7), the system should prompt the user to provide a file path as
+     
 def saveTabs(path1):
     file_name = "tabs.json"
     if os.path.exists(path1):  # Check if path exists
@@ -104,7 +109,10 @@ def saveTabs(path1):
         print("Operation done")
     else:
         print("The specified file does not exist")
-        
+    # -----------------------------------------  
+    # If the admin chooses (8), the system should prompt the user to input a file path as a
+    # parameter to load tabs from the specified file.
+    
 def importTabs(path1):
     file_name = "tabs.json"
     if os.path.exists(path1):
@@ -115,7 +123,7 @@ def importTabs(path1):
         print(tabs)
     else:
         print("The specified file does not exist")
-        
+    # ----------------------------------------- 
         
 def displayMenu():
     print("The Menu:\n 1. Open Tab\n 2. Close Tab\n 3. Switch Tab\n 4. Display All Tabs\n 5. Open Nested Tab\n 6. Clear All Tabs\n 7. Save Tab\n 8. Import Tabs\n 9. Exit\n")
