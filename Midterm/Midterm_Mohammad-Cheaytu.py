@@ -27,6 +27,19 @@ def closeTab(user_input):
         if tabs:
             tabs.pop()
 
+def switchTab(user_input):
+
+    try:
+        user_input is None
+    except:
+        int_index = int(user_input)
+        r1 = requests.get(tabs[int_index]["URL"])
+        doc = BeautifulSoup(r1.text, "html.parser")
+        print(doc.prettify())
+    else:
+        r2 = requests.get(tabs[-1]["URL"])
+        doc = BeautifulSoup(r2.text, "html.parser")
+        print(doc.prettify())
 
 def main2():
     greetings()
@@ -47,7 +60,8 @@ def main2():
 
 
         elif choice == 3:
-
+            user_input = input("Please enter the index number: ")
+            switchTab(user_input)
 
         elif choice == 4:
 
