@@ -44,15 +44,15 @@ def switchTab(user_input):
         print(doc.prettify())
 
 def displayTabs():
-    title = [i['Title'] for i in tabs]
+    title = [i['Title'] for i in tabs] 
     print(title)
     
 def nestedTabs(new_tab, parent_index, url):
-    nested_tab_position = parent_index + 1
+    nested_tab_position = parent_index + 1 # Nested tab position
 
     index = [i['Index'] for i in tabs]
     try:
-        index == parent_index
+        index == parent_index # Check if inputed value exists in tabs
 
     except:
         print("No such index")
@@ -62,7 +62,7 @@ def nestedTabs(new_tab, parent_index, url):
         except:
             print("invalid url")
         else:
-            tabs.insert(nested_tab_position, new_tab)
+            tabs.insert(nested_tab_position, new_tab) # Insert new tab at the specified position
             print(tabs)
             
 def clearTabs():
