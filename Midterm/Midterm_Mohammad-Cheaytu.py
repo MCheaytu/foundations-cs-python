@@ -3,6 +3,19 @@ from bs4 import BeautifulSoup
 import os
 import json
 
+tabs = []
+def openTab(url, title):
+    try:
+        r = requests.get(url)
+    except:
+        print("invalid url")
+    else:
+        tab = {"Index": len(tabs), "Title": title, "URL": url}
+        tabs.append(tab)
+        print(tabs)
+
+
+
 def main2():
     greetings()
     displayMenu()
