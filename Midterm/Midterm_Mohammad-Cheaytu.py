@@ -84,7 +84,7 @@ def importTabs(path1):
         with open(file_name, "r") as file_object:
             data = json.load(file_object)
             tabs.append(data.copy())
-        print(tab)
+        print(tabs)
     else:
         print("The specified file does not exist")
     
