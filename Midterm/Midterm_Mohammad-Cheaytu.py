@@ -17,11 +17,11 @@ def openTab(url, title): # Function to open a new tab
         tab = {"Index": len(tabs), "Title": title, "URL": url} # Create a new tab dictionnary
         tabs.append(tab) # Add it to the list
         print(tabs)
-  # -----------------------------------------
+# -----------------------------------------
   
-  #If the admin chooses (2), the system should permit the user to input the index of the
-  #tab they wish to close. If no index is provided, the system will close the last opened
-  #tab.
+#If the admin chooses (2), the system should permit the user to input the index of the
+#tab they wish to close. If no index is provided, the system will close the last opened
+#tab.
   
   
 def closeTab(user_input): # Function to close a tab
@@ -36,13 +36,13 @@ def closeTab(user_input): # Function to close a tab
     else:
         if tabs: # If there is no index remove the last tab
             tabs.pop()
-  # -----------------------------------------
+# -----------------------------------------
   
-  #If the admin chooses (3), the system should enable the user to enter the index of
-  #the tab for displaying its content. If no index is provided, the system will display
-  #the content of the last opened tab. Note: 'Displaying' in this context refers to printing
-  #the HTML content of the URL associated with the tab. Conduct some research on
-  #web scraping for more insights.
+#If the admin chooses (3), the system should enable the user to enter the index of
+#the tab for displaying its content. If no index is provided, the system will display
+#the content of the last opened tab. Note: 'Displaying' in this context refers to printing
+#the HTML content of the URL associated with the tab. Conduct some research on
+#web scraping for more insights.
   
   
 def switchTab(user_input):
@@ -58,19 +58,19 @@ def switchTab(user_input):
         r2 = requests.get(tabs[-1]["URL"]) # If input is None request last tab url and show it's content
         doc = BeautifulSoup(r2.text, "html.parser")
         print(doc.prettify())
-  # -----------------------------------------
-  #If the admin chooses (4), the system should print the titles of all open tabs. If there
-  #are nested tabs, display them hierarchically
+# -----------------------------------------
+#If the admin chooses (4), the system should print the titles of all open tabs. If there
+#are nested tabs, display them hierarchically
   
   
 def displayTabs():
     title = [i['Title'] for i in tabs] 
     print(title)
-   # -----------------------------------------
-   #If the admin chooses (5), the system should enable users to create nested tabs by
+# -----------------------------------------
+#If the admin chooses (5), the system should enable users to create nested tabs by
    #specifying the index of the parent tab where they want to insert additional tabs.
-   #After entering the index, the system should prompt the user to input the titles and
-   #contents for the new tabs.
+#After entering the index, the system should prompt the user to input the titles and
+#contents for the new tabs.
    
    
 def nestedTabs(new_tab, parent_index, url):
@@ -90,18 +90,18 @@ def nestedTabs(new_tab, parent_index, url):
         else:
             tabs.insert(nested_tab_position, new_tab) # Insert new tab at the specified position
             print(tabs)
-     # -----------------------------------------  
-     # If the admin chooses (6), the system should allow users to clear all opened tabs.
+# -----------------------------------------  
+# If the admin chooses (6), the system should allow users to clear all opened tabs.
       
       
 def clearTabs():
     tabs.clear() # clear tabs
     print(tabs)
-     # -----------------------------------------  
-     # If the admin chooses (7), the system should prompt the user to provide a file path as
-     #a parameter to save the current state of open tabs. Each tab's information, including
-     #title, content, and any nested tabs, should be written to the file in JSON format.
-     #Conduct some research for additional insights on JSON.
+# -----------------------------------------  
+# If the admin chooses (7), the system should prompt the user to provide a file path as
+#a parameter to save the current state of open tabs. Each tab's information, including
+#title, content, and any nested tabs, should be written to the file in JSON format.
+#Conduct some research for additional insights on JSON.
      
 def saveTabs(path1):
     file_name = "tabs.json"
@@ -112,9 +112,9 @@ def saveTabs(path1):
         print("Operation done")
     else:
         print("The specified file does not exist")
-    # -----------------------------------------  
-    # If the admin chooses (8), the system should prompt the user to input a file path as a
-    # parameter to load tabs from the specified file.
+# -----------------------------------------  
+# If the admin chooses (8), the system should prompt the user to input a file path as a
+# parameter to load tabs from the specified file.
     
 def importTabs(path1):
     file_name = "tabs.json"
@@ -126,7 +126,7 @@ def importTabs(path1):
         print(tabs)
     else:
         print("The specified file does not exist")
-    # ----------------------------------------- 
+# ----------------------------------------- 
         
 def displayMenu():
     print("The Menu:\n 1. Open Tab\n 2. Close Tab\n 3. Switch Tab\n 4. Display All Tabs\n 5. Open Nested Tab\n 6. Clear All Tabs\n 7. Save Tab\n 8. Import Tabs\n 9. Exit\n")
