@@ -68,7 +68,7 @@ def displayTabs():
     print(title)
 # -----------------------------------------
 #If the admin chooses (5), the system should enable users to create nested tabs by
-   #specifying the index of the parent tab where they want to insert additional tabs.
+#specifying the index of the parent tab where they want to insert additional tabs
 #After entering the index, the system should prompt the user to input the titles and
 #contents for the new tabs.
    
