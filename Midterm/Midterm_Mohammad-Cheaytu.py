@@ -32,14 +32,14 @@ def closeTab(user_input): # Function to close a tab
 def switchTab(user_input):
 
     try:
-        user_input is None
+        user_input is None # Check if the user didn't input a value
     except:
         int_index = int(user_input)
-        r1 = requests.get(tabs[int_index]["URL"])
-        doc = BeautifulSoup(r1.text, "html.parser")
+        r1 = requests.get(tabs[int_index]["URL"]) # Request the specified url
+        doc = BeautifulSoup(r1.text, "html.parser") #print the HTML content
         print(doc.prettify())
     else:
-        r2 = requests.get(tabs[-1]["URL"])
+        r2 = requests.get(tabs[-1]["URL"]) # If input is None request last tab url and show it's content
         doc = BeautifulSoup(r2.text, "html.parser")
         print(doc.prettify())
 
