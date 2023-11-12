@@ -72,7 +72,7 @@ def saveTabs(path1):
     if os.path.exists(path1):
         os.chdir(path1)
         with open(file_name, "w") as file_object:
-            json.dumps(tabs, file_object)
+            json.dump(tabs, file_object)
         print("Operation done")
     else:
         print("The specified file does not exist")
