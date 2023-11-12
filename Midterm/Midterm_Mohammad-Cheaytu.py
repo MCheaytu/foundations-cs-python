@@ -45,6 +45,24 @@ def displayTabs():
     title = [i['Title'] for i in tabs]
     print(title)
     
+def nestedTabs(new_tab, parent_index, url):
+    nested_tab_position = parent_index + 1
+
+    index = [i['Index'] for i in tabs]
+    try:
+        index == parent_index
+
+    except:
+        print("No such index")
+    else:
+        try:
+            r = requests.get(url)
+        except:
+            print("invalid url")
+        else:
+            tabs.insert(nested_tab_position, new_tab)
+            print(tabs)
+    
 def main2():
     greetings()
     displayMenu()
@@ -71,6 +89,9 @@ def main2():
             displayTabs()
 
         elif choice == 5:
+            parent_index = int(input("Kindly enter the index number: "))
+            title = input("Kindly enter the title of the tab: ")
+            url = input("kindly enter the url of the tab: ")
 
         elif choice == 6:
 
