@@ -89,6 +89,14 @@ def importTabs(path1):
         print(tabs)
     else:
         print("The specified file does not exist")
+        
+        
+def displayMenu():
+    print("The Menu:\n 1. Open Tab\n 2. Close Tab\n 3. Switch Tab\n 4. Display All Tabs\n 5. Open Nested Tab\n 6. Clear All Tabs\n 7. Save Tab\n 8. Import Tabs\n 9. Exit\n")
+
+
+def greetings():
+    print("Hello, User!")
     
 def main2():
     greetings()
