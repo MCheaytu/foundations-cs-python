@@ -5,6 +5,9 @@ import os
 import json
 
 tabs = [] # List to store open tabs
+
+# If the admin chooses (1), the system should allow the user to add a new tab by
+# asking for the Title and the URL of the website.
 def openTab(url, title): # Function to open a new tab
     try:
         r = requests.get(url) #  Make a request to the given url
@@ -14,7 +17,13 @@ def openTab(url, title): # Function to open a new tab
         tab = {"Index": len(tabs), "Title": title, "URL": url} # Create a new tab dictionnary
         tabs.append(tab) # Add it to the list
         print(tabs)
-        
+  # -----------------------------------------
+  
+  #If the admin chooses (2), the system should permit the user to input the index of the
+  #tab they wish to close. If no index is provided, the system will close the last opened
+  #tab.
+  
+  
 def closeTab(user_input): # Function to close a tab
     global tabs
     if user_input: # Check if the user provided input
@@ -27,7 +36,15 @@ def closeTab(user_input): # Function to close a tab
     else:
         if tabs: # If there is no index remove the last tab
             tabs.pop()
-
+  # -----------------------------------------
+  
+  #If the admin chooses (3), the system should enable the user to enter the index of
+  #the tab for displaying its content. If no index is provided, the system will display
+  #the content of the last opened tab. Note: 'Displaying' in this context refers to printing
+  #the HTML content of the URL associated with the tab. Conduct some research on
+  #web scraping for more insights.
+  
+  
 def switchTab(user_input):
 
     try:
@@ -41,11 +58,21 @@ def switchTab(user_input):
         r2 = requests.get(tabs[-1]["URL"]) # If input is None request last tab url and show it's content
         doc = BeautifulSoup(r2.text, "html.parser")
         print(doc.prettify())
-
+  # -----------------------------------------
+  #If the admin chooses (4), the system should print the titles of all open tabs. If there
+  #are nested tabs, display them hierarchically
+  
+  
 def displayTabs():
     title = [i['Title'] for i in tabs] 
     print(title)
-    
+   # -----------------------------------------
+   #If the admin chooses (5), the system should enable users to create nested tabs by
+   #specifying the index of the parent tab where they want to insert additional tabs.
+   #After entering the index, the system should prompt the user to input the titles and
+   #contents for the new tabs.
+   
+   
 def nestedTabs(new_tab, parent_index, url):
     nested_tab_position = parent_index + 1 # Nested tab position
 
@@ -63,7 +90,7 @@ def nestedTabs(new_tab, parent_index, url):
         else:
             tabs.insert(nested_tab_position, new_tab) # Insert new tab at the specified position
             print(tabs)
-            
+      # -----------------------------------------         
 def clearTabs():
     tabs.clear() # clear tabs
     print(tabs)
