@@ -76,6 +76,17 @@ def saveTabs(path1):
         print("Operation done")
     else:
         print("The specified file does not exist")
+        
+def importTabs(path1):
+    file_name = "tabs.json"
+    if os.path.exists(path1):
+        os.chdir(path1)
+        with open(file_name, "r") as file_object:
+            data = json.load(file_object)
+            tabs.append(data.copy())
+        print(tab)
+    else:
+        print("The specified file does not exist")
     
 def main2():
     greetings()
@@ -117,7 +128,8 @@ def main2():
 
 
         elif choice == 8:
-
+            path1 = input("kindly write the file path :")
+            importTabs(path1)
 
         elif choice == 9:
             exit()
