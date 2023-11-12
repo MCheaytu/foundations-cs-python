@@ -66,15 +66,15 @@ def nestedTabs(new_tab, parent_index, url):
             print(tabs)
             
 def clearTabs():
-    tabs.clear()
+    tabs.clear() # clear tabs
     print(tabs)
     
 def saveTabs(path1):
     file_name = "tabs.json"
-    if os.path.exists(path1):
-        os.chdir(path1)
-        with open(file_name, "w") as file_object:
-            json.dump(tabs, file_object)
+    if os.path.exists(path1):  # Check if path exists
+        os.chdir(path1) # Change directory to the specified path
+        with open(file_name, "w") as file_object: # Open tabs.json in write mode
+            json.dump(tabs, file_object) # Dumps list tabs to tabs.json
         print("Operation done")
     else:
         print("The specified file does not exist")
